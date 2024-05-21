@@ -29,7 +29,8 @@ export default defineConfig({
   },
   appearance: false,
   outDir:'docs',
-  base:'https://gusscode.github.io/gooddialogs/',
+  
+  base:'/gooddialogs/',
   
   
 })
