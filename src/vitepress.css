@@ -46,6 +46,7 @@ html.dark select {
     
 }
 select {
+    border-radius: 4px;
     padding: 0px 8px 0 8px;
     border: solid 1px rgba(0, 0, 0, 0.5);
     

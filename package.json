@@ -28,7 +28,15 @@
     "sass:watch": "sass src/base.scss src/base.css --watch",
     "sass:build": "sass src/base.scss src/base.css && postcss src/base.css -o src/base.min.css"
   },
-  "keywords": [],
+  "keywords": [
+    "dialog",
+    "alert",
+    "prompt",
+    "modal",
+    "popup",
+    "confirm",
+    "toast"
+  ],
   "license": "MIT",
   "devDependencies": {
     "cssnano": "^7.0.1",
@@ -38,4 +46,5 @@
     "typescript": "^5.4.5",
     "vitepress": "^1.1.4"
   }
+  
 }

@@ -8,7 +8,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-     
+
     ],
 
     sidebar: [
@@ -18,7 +18,7 @@ export default defineConfig({
           { text: 'Home', link: '/' },
           { text: 'Dialogs', link: '/dialogs/' },
           { text: 'Notifications', link: '/notifications/' },
-          
+
         ]
       }
     ],
@@ -28,9 +28,23 @@ export default defineConfig({
     ]
   },
   appearance: false,
-  outDir:'docs',
-  
-  base:'/gooddialogs/',
-  
-  
+  outDir: 'docs',
+
+  base: '/gooddialogs/',
+  head: [
+    [
+      'script',
+      { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-8LSVNLGR7N' }
+    ],
+    [
+      'script',
+      {},
+      `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-8LSVNLGR7N');`
+    ]
+  ]
+
 })
