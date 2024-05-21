@@ -1,11 +1,15 @@
 {
   "name": "gooddialogs",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "good dialogs and notifications",
   "main": "dist/dist-node/index.js",
   "module": "dist/dist-node/index.js",
   "browser": "dist/dist-browser/index.js",
   "author": "Gustavo Fernandez Aguilar <gustavo_violinmus@hotmail.com>",
+  "homepage": "https://gusscode.github.io/gooddialogs/",
+  "repository": {
+    "url": "https://github.com/gusscode/gooddialogs"
+  },
   "types": "dist/gooddialogs.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

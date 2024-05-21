@@ -24,7 +24,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/ggg' }
+      { icon: 'github', link: 'https://github.com/gusscode/gooddialogs' }
     ]
   },
   appearance: false,
