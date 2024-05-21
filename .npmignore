@@ -1,0 +1,9 @@
+.vitepress
+node_modules
+index.md
+postcss.config.js
+tailwind.config.js
+src
+dialogs
+notifications
+components

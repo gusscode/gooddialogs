@@ -1,0 +1,52 @@
+.gd-v-button {
+    background-color: rgb(38, 187, 38);
+    color: white;
+    padding: 4px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 9999px;
+    transition: all 300ms ease-in-out;
+    /* box-shadow: inset rgba(0, 0, 0, 0.5) 1px -4px 8px,  inset rgba(255, 255, 255, 0.5) 1px 4px 8px; */
+}
+html.dark .gd-v-button {
+    background-color: green;
+    color: white;
+    padding: 4px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 99999px;
+    
+}
+
+
+.gd-v-button:hover {
+    opacity: 0.8;
+}
+
+.gd-v-button:active {
+    transform: scale(1.1);
+}
+
+html.dark input{
+
+    border: solid 1px rgba(255, 255, 255, 0.5);
+}
+body input {
+    padding-left: 8px;
+    border: solid 1px rgba(0, 0, 0, 0.5);
+    padding-top: 0px;
+    border-radius: 8px;
+    
+
+}
+
+html.dark select {
+    padding: 0px 8px 0 8px;
+    border: solid 1px rgba(255, 255, 255, 0.5);
+    
+}
+select {
+    padding: 0px 8px 0 8px;
+    border: solid 1px rgba(0, 0, 0, 0.5);
+    
+}

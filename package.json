@@ -1,0 +1,37 @@
+{
+  "name": "gooddialogs",
+  "version": "0.2.1",
+  "description": "good dialogs and notifications",
+  "main": "dist/dist-node/index.js",
+  "module": "dist/dist-node/index.js",
+  "browser": "dist/dist-browser/index.js",
+  "author": "Gustavo Fernandez Aguilar <gustavo_violinmus@hotmail.com>",
+  "types": "dist/gooddialogs.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vitepress dev --host --port 5000",
+    "node": "",
+    "browser": "cd src && npx tsc gooddialogs.service.ts --outDir ../dist-browser --module ES6",
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview",
+    "prepare-folder": "if exist dist rmdir /s /q dist && mkdir dist",
+    "build-browser": "tsc src/index.ts --outDir dist/dist-browser --module ES6",
+    "build-node": "tsc src/index.ts --outDir dist/dist-node",
+    "build": "npm run prepare-folder && npm run build-browser || npm run build-node || npm run sass:build && npm run copy",
+    "publicar": "npm publish --access public",
+    "copy": "cd src && copy base.min.css ..\\dist && copy base.min.css.map ..\\dist && copy gooddialogs.d.ts ..\\dist",
+    "sass:watch": "sass src/base.scss src/base.css --watch",
+    "sass:build": "sass src/base.scss src/base.css && postcss src/base.css -o src/base.min.css"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "devDependencies": {
+    "cssnano": "^7.0.1",
+    "postcss": "^8.4.38",
+    "postcss-cli": "^11.0.0",
+    "sass": "^1.77.2",
+    "typescript": "^5.4.5",
+    "vitepress": "^1.1.4"
+  }
+}

@@ -1,0 +1,164 @@
+/* color palette from <https://github.com/vuejs/theme> */
+@import 'variables';
+@import 'components';
+@import 'animations';
+
+
+.goodalert-animation-aparecer {
+    animation-name: goodalert-animation-aparecer;
+    animation-duration: 500ms; /* Duración de 1 segundo */
+}
+
+
+.goodalert-animation-desaparecer {
+    animation-name: goodalert-animation-desaparecer;
+    animation-duration: 700ms; /* Duración de 1 segundo */
+}
+
+@keyframes goodalert-animation-aparecer {
+    0% {
+        opacity: 0; /* Elemento invisible al inicio */
+        transform: scale(0.2); /* Desplazamiento hacia arriba */
+    }
+    70% {
+        opacity: 0.8; /* Elemento completamente visible al final */
+        transform: scale(1.2); /* Sin desplazamiento */
+    }
+    100% {
+        opacity: 1; /* Elemento completamente visible al final */
+        transform: scale(1); /* Sin desplazamiento */
+    }
+}
+
+@keyframes goodalert-animation-desaparecer {
+    0% {
+        opacity: 1; /* Elemento invisible al inicio */
+        transform: scale(1); /* Desplazamiento hacia arriba */
+    }
+    30% {
+        opacity: 0.4; /* Elemento completamente visible al final */
+        transform: scale(1.2); /* Sin desplazamiento */
+    }
+    100% {
+        opacity: 0; /* Elemento completamente visible al final */
+        transform: scale(0); /* Sin desplazamiento */
+    }
+}
+
+.gooddialog-container-fade-in {
+    animation-name: gooddialog-container-fade-in;
+    animation-duration: 500ms;
+    /* animation-delay: 3000ms; */
+}
+.gooddialog-container-fade-out {
+    animation-name: gooddialog-container-fade-out;
+    animation-duration: 600ms;
+}
+
+@keyframes gooddialog-container-fade-in {
+    0% {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+}
+@keyframes gooddialog-container-fade-out {
+    0% {
+        ackground-color: rgba(0, 0, 0, 0.3);
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+
+.gooddialog-svg-container path {
+    animation-name: gooddialog-svg-info;
+    animation-duration: 0.7s;
+    fill: var(--gd-color-svg-info);
+    transform-origin: center;
+    /* stroke: blanchedalmond; */
+}
+
+@keyframes gooddialog-svg-info {
+    0% {
+        opacity: 0; /* Elemento invisible al inicio */
+        transform: scale(0) rotateY(0deg); /* Desplazamiento hacia arriba */
+        /* transform: rotateY(0deg); */
+    }
+    25% {
+        opacity: 0.4; /* Elemento completamente visible al final */
+        transform: scale(0.3) translateY(0px); /* Sin desplazamiento */
+        /* transform: rotateY(90deg); */
+    }
+
+    70% {
+        transform: translateY(-10px) rotateY(90deg);
+    }
+    100% {
+        opacity: 1; /* Elemento completamente visible al final */
+        transform: scale(1) rotateY(0deg) translateY(0px); /* Sin desplazamiento */
+        /*  transform: rotateY(0deg); */
+    }
+}
+
+.gooddialog-svg-container-ok path {
+    animation-name: gooddialog-svg-ok;
+    animation-duration: 0.7s;
+    fill: var(--gd-color-svg-ok);
+    transform-origin: center;
+    overflow: visible;
+    /* stroke: blanchedalmond; */
+}
+
+@keyframes gooddialog-svg-ok {
+    0% {
+        opacity: 0; /* Elemento invisible al inicio */
+        transform: scale(0) rotateY(0deg); /* Desplazamiento hacia arriba */
+        /* transform: rotateY(0deg); */
+    }
+    25% {
+        opacity: 0.4; /* Elemento completamente visible al final */
+        transform: scale(0.3) translateY(0px); /* Sin desplazamiento */
+        /* transform: rotateY(90deg); */
+    }
+
+    70% {
+        transform: translateY(-1px) rotateY(90deg);
+    }
+    100% {
+        opacity: 1; /* Elemento completamente visible al final */
+        transform: scale(1) rotateY(0deg) translateY(0px); /* Sin desplazamiento */
+        /*  transform: rotateY(0deg); */
+    }
+}
+
+.gooddialog-svg-container-cancel path {
+    animation-name: gooddialog-svg-cancel;
+    animation-duration: 0.7s;
+    fill: var(--gd-color-svg-cancel);
+    transform-origin: center;
+    /* stroke: blanchedalmond; */
+}
+
+@keyframes gooddialog-svg-cancel {
+    0% {
+        opacity: 0; /* Elemento invisible al inicio */
+        transform: scale(0) rotateY(0deg); /* Desplazamiento hacia arriba */
+        /* transform: rotateY(0deg); */
+    }
+    25% {
+        opacity: 0.4; /* Elemento completamente visible al final */
+        transform: scale(0.3) translateY(0px); /* Sin desplazamiento */
+        /* transform: rotateY(90deg); */
+    }
+
+    70% {
+        transform: translateY(-1px) rotateY(90deg);
+    }
+    100% {
+        opacity: 1; /* Elemento completamente visible al final */
+        transform: scale(1) rotateY(0deg) translateY(0px); /* Sin desplazamiento */
+        /*  transform: rotateY(0deg); */
+    }
+}

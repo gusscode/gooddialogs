@@ -1,0 +1,1 @@
+export { GoodDialogs, goodDialogs } from './gooddialogs.service'
