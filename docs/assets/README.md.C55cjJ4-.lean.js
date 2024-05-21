@@ -1,1 +1,0 @@
-import{_ as t,c as s,o as i,a2 as a}from"./chunks/framework.BSWk7bsz.js";const E=JSON.parse('{"title":"Dialogs","description":"","frontmatter":{},"headers":[],"relativePath":"README.md","filePath":"README.md"}'),e={name:"README.md"},d=a("",15),o=[d];function n(l,h,r,c,p,k){return i(),s("div",null,o)}const u=t(e,[["render",n]]);export{E as __pageData,u as default};

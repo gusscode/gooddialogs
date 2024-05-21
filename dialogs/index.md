@@ -17,11 +17,13 @@ npm install gooddialogs
 ```
 ## Import single
 ``` ts
+import 'gooddialogs/dist/base.min.css';
 import {goodDialogs} from 'gooddialogs';
 ```
 ## Import and create instance
 
 ``` ts
+import 'gooddialogs/dist/base.min.css';
 import {GoodDialogs} from 'gooddialogs';
 const goodDialogs = new GoodDialogs('Message');
 ```
@@ -36,6 +38,10 @@ const resDialog = await goodDialogs.confirm('Message')
 
 ## With Options
 <GoodDialog></GoodDialog>
+
+``` ts
+const resDialog = await goodDialogs.confirm('Mensaje'. {/* Options */})
+```
 
 ## Confirm Dialog
 

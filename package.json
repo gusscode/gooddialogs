@@ -1,6 +1,6 @@
 {
   "name": "gooddialogs",
-  "version": "0.2.2",
+  "version": "0.2.4",
   "description": "good dialogs and notifications",
   "main": "dist/dist-node/index.js",
   "module": "dist/dist-node/index.js",
@@ -29,7 +29,7 @@
     "sass:build": "sass src/base.scss src/base.css && postcss src/base.css -o src/base.min.css"
   },
   "keywords": [],
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "cssnano": "^7.0.1",
     "postcss": "^8.4.38",
