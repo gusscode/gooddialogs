@@ -40,14 +40,17 @@ const resDialog = await goodDialogs.confirm('Message')
 <GoodDialog></GoodDialog>
 
 ``` ts
-const resDialog = await goodDialogs.confirm('Mensaje'. {/* Options */})
+const resDialog = await goodDialogs.confirm('Mensaje', {/* Options */})
 ```
 
 ## Confirm Dialog
 
-
-
 ``` ts
+const resDialog = await goodDialogs.confirm('Mensaje')
+```
+
+
+<!-- ``` ts
 const resDialog = await goodDialogs.confirm('Mensaje')
 ```
 
@@ -61,7 +64,7 @@ const resDialog = await goodDialogs.confirm('Mensaje')
 const resDialog = await goodDialogs.confirm('Mensaje')
 ```
 
-:::
+::: -->
 
 ## Option Properties
 
