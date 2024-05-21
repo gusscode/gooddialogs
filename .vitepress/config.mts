@@ -27,6 +27,7 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/vuejs/ggg' }
     ]
   },
-  appearance: false
+  appearance: false,
+  outDir:'docs'
   
 })
