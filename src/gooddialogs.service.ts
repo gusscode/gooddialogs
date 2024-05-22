@@ -138,8 +138,10 @@ export class GoodDialogs {
                     container.addEventListener('animationend', () => {
                         container.style.backgroundColor = 'rgba(0, 0, 0, 0.0)'
                     })
-                    
+                    alert.classList.add(optionsAlert.alertOut!)
                     alert.addEventListener('animationend', () => {
+                        
+                        
                         container.remove()
                     })
                 }
