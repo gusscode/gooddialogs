@@ -382,7 +382,7 @@ export class GoodDialogs {
 
         }
         const notification = document.createElement('div')
-        notification.classList.value = 'gooddialog-notification' + ' ' + optionsNotification.theme! + ' ' + 'aparecer' + ' ' + (optionsNotification.darkForce ? 'dark' : '')
+        notification.classList.value = 'gooddialog-notification' + ' ' + optionsNotification.theme! + ' ' + 'goodalert-animation-aparecer' + ' ' + (optionsNotification.darkForce ? 'dark' : '')
 
         notification.textContent = message ?? ''
 

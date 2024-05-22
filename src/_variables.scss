@@ -341,6 +341,7 @@ html.dark .gooddialog-notification.gd-theme-indigo.light {
     --gd-bg-alert: var(--gd-indigo-50);
     --gd-border: var(--gd-indigo-400);
     --gd-color: var(--gd-slate-700);
+    --gd-color-notify-before: var(--gd-indigo-400);
     --gd-text-color-btn: var(--gd-slate-100);
     --gd-bg-confirm-button: var(--gd-green-600);
     --gd-bg-cancel-button: var(--gd-orange-600);
@@ -352,6 +353,7 @@ html.dark .gooddialog-notification.gd-theme-indigo.light {
     --gd-color-svg-cancel: var(--gd-orange-600);
     .gooddialog-alert{
         box-shadow: var(--gd-indigo-800) 4px 4px 8px;
+        --gd-shadow: var(--gd-indigo-800) 4px 4px 8px;
     }
     /* Notifications */
 }

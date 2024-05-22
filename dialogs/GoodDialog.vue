@@ -8,6 +8,7 @@ import {
 } from "../src/gooddialogs.service";
 import GToggle from "../components/GToggle.vue";
 import GToggleDarkMode from "../components/GToggleDarkMode.vue";
+import SelectTheme from "../components/SelectTheme.vue";
 
 const themes = ref(["gd-theme-indigo", "gd-theme-primary", "gd-theme-blue"]);
 const currentTheme = ref<OptionTheme>("gd-theme-indigo");
@@ -53,16 +54,7 @@ const changedarkMode = () => {
       </div>
       <div>
         Theme:
-        <select
-          style="margin-top: 16px; margin-bottom: 16px"
-          name=""
-          id=""
-          v-model="optionsGD.theme"
-        >
-          <option :value="option" v-for="(option, index) in themes">
-            {{ option }}
-          </option>
-        </select>
+        <SelectTheme v-model="optionsGD.theme!"></SelectTheme>
       </div>
       <div>
         <button class="gd-v-button" @click="viewAlerts">Launch Dialog</button>

@@ -344,6 +344,7 @@ html.dark .gooddialog-notification.gd-theme-indigo.light {
   --gd-bg-alert: var(--gd-indigo-50);
   --gd-border: var(--gd-indigo-400);
   --gd-color: var(--gd-slate-700);
+  --gd-color-notify-before: var(--gd-indigo-400);
   --gd-text-color-btn: var(--gd-slate-100);
   --gd-bg-confirm-button: var(--gd-green-600);
   --gd-bg-cancel-button: var(--gd-orange-600);
@@ -360,6 +361,7 @@ html.dark .gooddialog-container.gd-theme-indigo.light .gooddialog-alert,
 .gooddialog-notification.gd-theme-indigo .gooddialog-alert,
 html.dark .gooddialog-notification.gd-theme-indigo.light .gooddialog-alert {
   box-shadow: var(--gd-indigo-800) 4px 4px 8px;
+  --gd-shadow: var(--gd-indigo-800) 4px 4px 8px;
 }
 
 /* Theme Indigo Dark */
@@ -559,11 +561,14 @@ html.dark .gooddialog-notification.gd-theme-indigo .gooddialog-alert,
 
 .gooddialog-notification {
   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  background-color: var(--gd-bg-confirm-button);
-  color: var(--gd-text-color-btn);
-  border-radius: 8px;
+  background-color: var(--gd-bg-alert);
+  color: var(--gd-color);
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
   width: fit-content;
   padding: 8px;
+  padding-left: 20px;
   z-index: 500;
   transition: transform 0.8s ease, opacity 0.5s ease;
   box-shadow: rgba(0, 0, 0, 0.3) 4px 4px 4px;
@@ -574,6 +579,16 @@ html.dark .gooddialog-notification.gd-theme-indigo .gooddialog-alert,
   border-width: 0;
   border-style: solid;
   border-color: theme("borderColor.DEFAULT", currentColor);
+}
+
+.gooddialog-notification::before {
+  content: " ";
+  width: 8px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: var(--gd-color-notify-before);
 }
 
 .gooddialog-notification-container-top-left {
