@@ -41,6 +41,8 @@ function changeRefText(element: Options["cancelButtonText"], content: string) {
 const changedarkMode = () => {
   document.documentElement.classList.toggle("dark");
 };
+
+
 </script>
 
 <template>
@@ -50,7 +52,7 @@ const changedarkMode = () => {
         <GToggleDarkMode></GToggleDarkMode>
       </div>
       <div>
-        Theme: 
+        Theme:
         <select
           style="margin-top: 16px; margin-bottom: 16px"
           name=""

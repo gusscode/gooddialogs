@@ -24,9 +24,20 @@ hero:
 ---
 
 <script setup lang="ts">
-import {goodDialogs} from './src/gooddialogs.service';
+import {goodDialogs, GoodDialogs} from './src/gooddialogs.service';
 import GToggleDarkMode from "./components/GToggleDarkMode.vue";
+async function pruebaBorrar() {
+  const goodDialogs = new GoodDialogs();
+  const resDialog = await goodDialogs.confirm("Delete?");
+  if (!resDialog) return goodDialogs.cancelled("cancelled");
+  //const response = await apiService.delete('api/v1/document/' + 4)
 
+  if (true) {
+    goodDialogs.success("Success Delete!");
+  } else {
+    goodDialogs.cancelled("Error");
+  }
+}
 </script>
 <GToggleDarkMode></GToggleDarkMode>
 <button class="gd-v-button" @click="goodDialogs.confirm('Mensaje')">Launch Dialog</button>
@@ -42,3 +53,22 @@ const resDialog = await goodDialogs.confirm('Mensaje')
 - Typescript and Module JS
 - It's not political spam
 - MIT
+
+<button class="gd-v-button" @click="pruebaBorrar">Delete Example</button>
+
+
+``` ts
+async function deleteDocument() {
+  
+  const resDialog = await goodDialogs.confirm("Delete?");
+  if (!resDialog) return goodDialogs.cancelled("cancelled");
+  const response = await apiService.delete('/api/v1/document/' + 4)
+
+  if (response.status < 400) {
+    goodDialogs.success("Success Delete!");
+  } else {
+    goodDialogs.cancelled("Error");
+  }
+}
+
+```

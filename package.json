@@ -1,6 +1,6 @@
 {
   "name": "gooddialogs",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "good dialogs and notifications",
   "main": "dist/dist-node/index.js",
   "module": "dist/dist-node/index.js",
