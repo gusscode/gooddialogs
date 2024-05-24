@@ -16,16 +16,22 @@ declare module 'gooddialogs' {
     }
     export const goodDialogs: GoodDialogs;
 
+    export type OptionTheme = 'gd-theme-primary' | 'gd-theme-blue' | 'gd-theme-indigo'
+
 
     export type GoodDialogIcon = 'infoIcon' | 'okIcon' | 'cancelIcon'
     export interface Options {
+        type?: 'success' | 'info' | 'error' | 'warning'
         position?: 'top' | 'left' | 'right' | 'center' | 'top-left' | 'top-center' | 'top-right'
+        alertIn?: string
+        alertOut?: string
         timer?: number | null
         title?: string | null
         subtitle?: string | null
         containerClass?: string
-        theme?: 'gd-theme-primary' | 'gd-theme-blue'
+        theme?: OptionTheme
         darkForce?: boolean
+        lightForce?: boolean
         alertClass?: string
         confirmButttonClass?: string
         divIconClass?: string

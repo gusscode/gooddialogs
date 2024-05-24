@@ -256,7 +256,8 @@ html.dark {
 /* Primary */
 .gooddialog-container.gd-theme-primary,
 html.dark .gooddialog-container.gd-theme-primary.light,
-.gooddialog-notification.gd-theme-primaryñ html.dark .gooddialog-notification.gd-theme-primary.light {
+.gooddialog-notification.gd-theme-primary,
+html.dark .gooddialog-notification.gd-theme-primary.light {
   --gd-bg-container: rgba(0, 0, 0, 0.3);
   --gd-color: var(--gd-slate-700);
   --gd-border: var(--gd-slate-500);
@@ -270,7 +271,40 @@ html.dark .gooddialog-container.gd-theme-primary.light,
   --gd-color-svg-info: var(--gd-sky-400);
   --gd-color-svg-ok: var(--gd-green-500);
   --gd-color-svg-cancel: var(--gd-orange-600);
+  --gd-color-notify-before: var(--gd-slate-400);
   /* Notifications */
+}
+.gooddialog-container.gd-theme-primary.gooddialog-success,
+html.dark .gooddialog-container.gd-theme-primary.light.gooddialog-success,
+.gooddialog-notification.gd-theme-primary.gooddialog-success,
+html.dark .gooddialog-notification.gd-theme-primary.light.gooddialog-success {
+  --gd-bg-alert: var(--gd-green-500);
+  --gd-color: var(--gd-white);
+  --gd-color-notify-before: var(--gd-green-400);
+}
+.gooddialog-container.gd-theme-primary.gooddialog-error,
+html.dark .gooddialog-container.gd-theme-primary.light.gooddialog-error,
+.gooddialog-notification.gd-theme-primary.gooddialog-error,
+html.dark .gooddialog-notification.gd-theme-primary.light.gooddialog-error {
+  --gd-bg-alert: var(--gd-red-500);
+  --gd-color: var(--gd-white);
+  --gd-color-notify-before: var(--gd-red-400);
+}
+.gooddialog-container.gd-theme-primary.gooddialog-info,
+html.dark .gooddialog-container.gd-theme-primary.light.gooddialog-info,
+.gooddialog-notification.gd-theme-primary.gooddialog-info,
+html.dark .gooddialog-notification.gd-theme-primary.light.gooddialog-info {
+  --gd-bg-alert: var(--gd-sky-500);
+  --gd-color: var(--gd-white);
+  --gd-color-notify-before: var(--gd-sky-400);
+}
+.gooddialog-container.gd-theme-primary.gooddialog-warning,
+html.dark .gooddialog-container.gd-theme-primary.light.gooddialog-warning,
+.gooddialog-notification.gd-theme-primary.gooddialog-warning,
+html.dark .gooddialog-notification.gd-theme-primary.light.gooddialog-warning {
+  --gd-bg-alert: var(--gd-yellow-400);
+  --gd-color: var(--gd-yellow-900);
+  --gd-color-notify-before: var(--gd-yellow-200);
 }
 
 /* Primary Dark */
@@ -292,6 +326,38 @@ html.dark .gooddialog-notification.gd-theme-primary,
   --gd-color-svg-ok: var(--gd-green-500);
   --gd-color-svg-cancel: var(--gd-orange-600);
 }
+html.dark .gooddialog-container.gd-theme-primary.gooddialog-success,
+.gooddialog-container.gd-theme-primary.dark.gooddialog-success,
+html.dark .gooddialog-notification.gd-theme-primary.gooddialog-success,
+.gooddialog-notification.gd-theme-primary.dark.gooddialog-success {
+  --gd-bg-alert: var(--gd-green-600);
+  --gd-color: var(--gd-green-50);
+  --gd-color-notify-before: var(--gd-green-400);
+}
+html.dark .gooddialog-container.gd-theme-primary.gooddialog-error,
+.gooddialog-container.gd-theme-primary.dark.gooddialog-error,
+html.dark .gooddialog-notification.gd-theme-primary.gooddialog-error,
+.gooddialog-notification.gd-theme-primary.dark.gooddialog-error {
+  --gd-bg-alert: var(--gd-orange-600);
+  --gd-color: var(--gd-orange-50);
+  --gd-color-notify-before: var(--gd-orange-400);
+}
+html.dark .gooddialog-container.gd-theme-primary.gooddialog-info,
+.gooddialog-container.gd-theme-primary.dark.gooddialog-info,
+html.dark .gooddialog-notification.gd-theme-primary.gooddialog-info,
+.gooddialog-notification.gd-theme-primary.dark.gooddialog-info {
+  --gd-bg-alert: var(--gd-sky-600);
+  --gd-color: var(--gd-sky-50);
+  --gd-color-notify-before: var(--gd-sky-400);
+}
+html.dark .gooddialog-container.gd-theme-primary.gooddialog-warning,
+.gooddialog-container.gd-theme-primary.dark.gooddialog-warning,
+html.dark .gooddialog-notification.gd-theme-primary.gooddialog-warning,
+.gooddialog-notification.gd-theme-primary.dark.gooddialog-warning {
+  --gd-bg-alert: var(--gd-yellow-600);
+  --gd-color: var(--gd-yellow-50);
+  --gd-color-notify-before: var(--gd-yellow-400);
+}
 
 /* theme blue */
 .gooddialog-container.gd-theme-blue,
@@ -311,7 +377,40 @@ html.dark .gooddialog-notification.gd-theme-blue.light {
   --gd-color-svg-info: var(--gd-sky-400);
   --gd-color-svg-ok: var(--gd-green-500);
   --gd-color-svg-cancel: var(--gd-orange-600);
+  --gd-color-notify-before: var(--gd-blue-400);
   /* Notifications */
+}
+.gooddialog-container.gd-theme-blue.gooddialog-success,
+html.dark .gooddialog-container.gd-theme-blue.light.gooddialog-success,
+.gooddialog-notification.gd-theme-blue.gooddialog-success,
+html.dark .gooddialog-notification.gd-theme-blue.light.gooddialog-success {
+  --gd-bg-alert: var(--gd-green-500);
+  --gd-color: var(--gd-white);
+  --gd-color-notify-before: var(--gd-green-400);
+}
+.gooddialog-container.gd-theme-blue.gooddialog-error,
+html.dark .gooddialog-container.gd-theme-blue.light.gooddialog-error,
+.gooddialog-notification.gd-theme-blue.gooddialog-error,
+html.dark .gooddialog-notification.gd-theme-blue.light.gooddialog-error {
+  --gd-bg-alert: var(--gd-red-500);
+  --gd-color: var(--gd-white);
+  --gd-color-notify-before: var(--gd-red-400);
+}
+.gooddialog-container.gd-theme-blue.gooddialog-info,
+html.dark .gooddialog-container.gd-theme-blue.light.gooddialog-info,
+.gooddialog-notification.gd-theme-blue.gooddialog-info,
+html.dark .gooddialog-notification.gd-theme-blue.light.gooddialog-info {
+  --gd-bg-alert: var(--gd-sky-500);
+  --gd-color: var(--gd-white);
+  --gd-color-notify-before: var(--gd-sky-400);
+}
+.gooddialog-container.gd-theme-blue.gooddialog-warning,
+html.dark .gooddialog-container.gd-theme-blue.light.gooddialog-warning,
+.gooddialog-notification.gd-theme-blue.gooddialog-warning,
+html.dark .gooddialog-notification.gd-theme-blue.light.gooddialog-warning {
+  --gd-bg-alert: var(--gd-yellow-400);
+  --gd-color: var(--gd-yellow-900);
+  --gd-color-notify-before: var(--gd-yellow-200);
 }
 
 /* Theme Blue Dark */
@@ -334,6 +433,38 @@ html.dark .gooddialog-notification.gd-theme-blue,
   --gd-color-svg-cancel: var(--gd-orange-600);
   /* Notifications */
 }
+html.dark .gooddialog-container.gd-theme-blue.gooddialog-success,
+.gooddialog-container.gd-theme-blue.dark.gooddialog-success,
+html.dark .gooddialog-notification.gd-theme-blue.gooddialog-success,
+.gooddialog-notification.gd-theme-blue.dark.gooddialog-success {
+  --gd-bg-alert: var(--gd-green-600);
+  --gd-color: var(--gd-green-50);
+  --gd-color-notify-before: var(--gd-green-400);
+}
+html.dark .gooddialog-container.gd-theme-blue.gooddialog-error,
+.gooddialog-container.gd-theme-blue.dark.gooddialog-error,
+html.dark .gooddialog-notification.gd-theme-blue.gooddialog-error,
+.gooddialog-notification.gd-theme-blue.dark.gooddialog-error {
+  --gd-bg-alert: var(--gd-orange-600);
+  --gd-color: var(--gd-orange-50);
+  --gd-color-notify-before: var(--gd-orange-400);
+}
+html.dark .gooddialog-container.gd-theme-blue.gooddialog-info,
+.gooddialog-container.gd-theme-blue.dark.gooddialog-info,
+html.dark .gooddialog-notification.gd-theme-blue.gooddialog-info,
+.gooddialog-notification.gd-theme-blue.dark.gooddialog-info {
+  --gd-bg-alert: var(--gd-sky-600);
+  --gd-color: var(--gd-sky-50);
+  --gd-color-notify-before: var(--gd-sky-400);
+}
+html.dark .gooddialog-container.gd-theme-blue.gooddialog-warning,
+.gooddialog-container.gd-theme-blue.dark.gooddialog-warning,
+html.dark .gooddialog-notification.gd-theme-blue.gooddialog-warning,
+.gooddialog-notification.gd-theme-blue.dark.gooddialog-warning {
+  --gd-bg-alert: var(--gd-yellow-600);
+  --gd-color: var(--gd-yellow-50);
+  --gd-color-notify-before: var(--gd-yellow-400);
+}
 
 /* Theme indigo */
 .gooddialog-container.gd-theme-indigo,
@@ -344,7 +475,6 @@ html.dark .gooddialog-notification.gd-theme-indigo.light {
   --gd-bg-alert: var(--gd-indigo-50);
   --gd-border: var(--gd-indigo-400);
   --gd-color: var(--gd-slate-700);
-  --gd-color-notify-before: var(--gd-indigo-400);
   --gd-text-color-btn: var(--gd-slate-100);
   --gd-bg-confirm-button: var(--gd-green-600);
   --gd-bg-cancel-button: var(--gd-orange-600);
@@ -354,6 +484,7 @@ html.dark .gooddialog-notification.gd-theme-indigo.light {
   --gd-color-svg-info: var(--gd-sky-400);
   --gd-color-svg-ok: var(--gd-green-500);
   --gd-color-svg-cancel: var(--gd-orange-600);
+  --gd-color-notify-before: var(--gd-indigo-400);
   /* Notifications */
 }
 .gooddialog-container.gd-theme-indigo .gooddialog-alert,
@@ -362,6 +493,38 @@ html.dark .gooddialog-container.gd-theme-indigo.light .gooddialog-alert,
 html.dark .gooddialog-notification.gd-theme-indigo.light .gooddialog-alert {
   box-shadow: var(--gd-indigo-800) 4px 4px 8px;
   --gd-shadow: var(--gd-indigo-800) 4px 4px 8px;
+}
+.gooddialog-container.gd-theme-indigo.gooddialog-success,
+html.dark .gooddialog-container.gd-theme-indigo.light.gooddialog-success,
+.gooddialog-notification.gd-theme-indigo.gooddialog-success,
+html.dark .gooddialog-notification.gd-theme-indigo.light.gooddialog-success {
+  --gd-bg-alert: var(--gd-green-500);
+  --gd-color: var(--gd-white);
+  --gd-color-notify-before: var(--gd-green-400);
+}
+.gooddialog-container.gd-theme-indigo.gooddialog-error,
+html.dark .gooddialog-container.gd-theme-indigo.light.gooddialog-error,
+.gooddialog-notification.gd-theme-indigo.gooddialog-error,
+html.dark .gooddialog-notification.gd-theme-indigo.light.gooddialog-error {
+  --gd-bg-alert: var(--gd-red-500);
+  --gd-color: var(--gd-white);
+  --gd-color-notify-before: var(--gd-red-400);
+}
+.gooddialog-container.gd-theme-indigo.gooddialog-info,
+html.dark .gooddialog-container.gd-theme-indigo.light.gooddialog-info,
+.gooddialog-notification.gd-theme-indigo.gooddialog-info,
+html.dark .gooddialog-notification.gd-theme-indigo.light.gooddialog-info {
+  --gd-bg-alert: var(--gd-sky-500);
+  --gd-color: var(--gd-white);
+  --gd-color-notify-before: var(--gd-sky-400);
+}
+.gooddialog-container.gd-theme-indigo.gooddialog-warning,
+html.dark .gooddialog-container.gd-theme-indigo.light.gooddialog-warning,
+.gooddialog-notification.gd-theme-indigo.gooddialog-warning,
+html.dark .gooddialog-notification.gd-theme-indigo.light.gooddialog-warning {
+  --gd-bg-alert: var(--gd-yellow-400);
+  --gd-color: var(--gd-yellow-900);
+  --gd-color-notify-before: var(--gd-yellow-200);
 }
 
 /* Theme Indigo Dark */
@@ -389,6 +552,38 @@ html.dark .gooddialog-container.gd-theme-indigo .gooddialog-alert,
 html.dark .gooddialog-notification.gd-theme-indigo .gooddialog-alert,
 .gooddialog-notification.gd-theme-indigo.dark .gooddialog-alert {
   box-shadow: var(--gd-indigo-900) 4px 4px 8px;
+}
+html.dark .gooddialog-container.gd-theme-indigo.gooddialog-success,
+.gooddialog-container.gd-theme-indigo.dark.gooddialog-success,
+html.dark .gooddialog-notification.gd-theme-indigo.gooddialog-success,
+.gooddialog-notification.gd-theme-indigo.dark.gooddialog-success {
+  --gd-bg-alert: var(--gd-green-600);
+  --gd-color: var(--gd-green-50);
+  --gd-color-notify-before: var(--gd-green-400);
+}
+html.dark .gooddialog-container.gd-theme-indigo.gooddialog-error,
+.gooddialog-container.gd-theme-indigo.dark.gooddialog-error,
+html.dark .gooddialog-notification.gd-theme-indigo.gooddialog-error,
+.gooddialog-notification.gd-theme-indigo.dark.gooddialog-error {
+  --gd-bg-alert: var(--gd-orange-600);
+  --gd-color: var(--gd-orange-50);
+  --gd-color-notify-before: var(--gd-orange-400);
+}
+html.dark .gooddialog-container.gd-theme-indigo.gooddialog-info,
+.gooddialog-container.gd-theme-indigo.dark.gooddialog-info,
+html.dark .gooddialog-notification.gd-theme-indigo.gooddialog-info,
+.gooddialog-notification.gd-theme-indigo.dark.gooddialog-info {
+  --gd-bg-alert: var(--gd-sky-600);
+  --gd-color: var(--gd-sky-50);
+  --gd-color-notify-before: var(--gd-sky-400);
+}
+html.dark .gooddialog-container.gd-theme-indigo.gooddialog-warning,
+.gooddialog-container.gd-theme-indigo.dark.gooddialog-warning,
+html.dark .gooddialog-notification.gd-theme-indigo.gooddialog-warning,
+.gooddialog-notification.gd-theme-indigo.dark.gooddialog-warning {
+  --gd-bg-alert: var(--gd-yellow-600);
+  --gd-color: var(--gd-yellow-50);
+  --gd-color-notify-before: var(--gd-yellow-400);
 }
 
 .gooddialog-container p,

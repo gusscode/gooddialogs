@@ -249,10 +249,12 @@ html.dark {
     --gd-rose-900: rgb(136 19 55);
     --gd-rose-950: rgb(76 5 25);
 }
+
+
 /* Primary */
 .gooddialog-container.gd-theme-primary,
 html.dark .gooddialog-container.gd-theme-primary.light,
-.gooddialog-notification.gd-theme-primaryñ
+.gooddialog-notification.gd-theme-primary,
 html.dark .gooddialog-notification.gd-theme-primary.light {
     --gd-bg-container: rgba(0, 0, 0, 0.3);
     --gd-color: var(--gd-slate-700);
@@ -267,7 +269,28 @@ html.dark .gooddialog-notification.gd-theme-primary.light {
     --gd-color-svg-info: var(--gd-sky-400);
     --gd-color-svg-ok: var(--gd-green-500);
     --gd-color-svg-cancel: var(--gd-orange-600);
+    --gd-color-notify-before: var(--gd-slate-400);
     /* Notifications */
+    &.gooddialog-success {
+        --gd-bg-alert: var(--gd-green-500);
+        --gd-color: var(--gd-white);
+        --gd-color-notify-before: var(--gd-green-400);
+    }
+    &.gooddialog-error {
+        --gd-bg-alert: var(--gd-red-500);
+        --gd-color: var(--gd-white);
+        --gd-color-notify-before: var(--gd-red-400);
+    }
+    &.gooddialog-info {
+        --gd-bg-alert: var(--gd-sky-500);
+        --gd-color: var(--gd-white);
+        --gd-color-notify-before: var(--gd-sky-400);
+    }
+    &.gooddialog-warning {
+        --gd-bg-alert: var(--gd-yellow-400);
+        --gd-color: var(--gd-yellow-900);
+        --gd-color-notify-before: var(--gd-yellow-200);
+    }
 }
 
 /* Primary Dark */
@@ -289,6 +312,28 @@ html.dark .gooddialog-notification.gd-theme-primary,
     --gd-color-svg-info: var(--gd-sky-400);
     --gd-color-svg-ok: var(--gd-green-500);
     --gd-color-svg-cancel: var(--gd-orange-600);
+    &.gooddialog-success {
+        --gd-bg-alert: var(--gd-green-600);
+        --gd-color: var(--gd-green-50);
+        --gd-color-notify-before: var(--gd-green-400);
+    }
+    &.gooddialog-error {
+        --gd-bg-alert: var(--gd-orange-600);
+        --gd-color: var(--gd-orange-50);
+        --gd-color-notify-before: var(--gd-orange-400);
+    }
+    &.gooddialog-info {
+        --gd-bg-alert: var(--gd-sky-600);
+        --gd-color: var(--gd-sky-50);
+        --gd-color-notify-before: var(--gd-sky-400);
+    }
+    &.gooddialog-warning {
+        --gd-bg-alert: var(--gd-yellow-600);
+        --gd-color: var(--gd-yellow-50);
+        --gd-color-notify-before: var(--gd-yellow-400);
+    }
+    
+
 }
 /* theme blue */
 .gooddialog-container.gd-theme-blue,
@@ -308,6 +353,29 @@ html.dark .gooddialog-notification.gd-theme-blue.light {
     --gd-color-svg-info: var(--gd-sky-400);
     --gd-color-svg-ok: var(--gd-green-500);
     --gd-color-svg-cancel: var(--gd-orange-600);
+    --gd-color-notify-before: var(--gd-blue-400);
+    &.gooddialog-success {
+        --gd-bg-alert: var(--gd-green-500);
+        --gd-color: var(--gd-white);
+        --gd-color-notify-before: var(--gd-green-400);
+    }
+    &.gooddialog-error {
+        --gd-bg-alert: var(--gd-red-500);
+        --gd-color: var(--gd-white);
+        --gd-color-notify-before: var(--gd-red-400);
+    }
+    &.gooddialog-info {
+        --gd-bg-alert: var(--gd-sky-500);
+        --gd-color: var(--gd-white);
+        --gd-color-notify-before: var(--gd-sky-400);
+    }
+    &.gooddialog-warning {
+        --gd-bg-alert: var(--gd-yellow-400);
+        --gd-color: var(--gd-yellow-900);
+        --gd-color-notify-before: var(--gd-yellow-200);
+    }
+
+    
     /* Notifications */
 }
 /* Theme Blue Dark */
@@ -328,6 +396,26 @@ html.dark .gooddialog-notification.gd-theme-blue,
     --gd-color-svg-info: var(--gd-sky-400);
     --gd-color-svg-ok: var(--gd-green-500);
     --gd-color-svg-cancel: var(--gd-orange-600);
+    &.gooddialog-success {
+        --gd-bg-alert: var(--gd-green-600);
+        --gd-color: var(--gd-green-50);
+        --gd-color-notify-before: var(--gd-green-400);
+    }
+    &.gooddialog-error {
+        --gd-bg-alert: var(--gd-orange-600);
+        --gd-color: var(--gd-orange-50);
+        --gd-color-notify-before: var(--gd-orange-400);
+    }
+    &.gooddialog-info {
+        --gd-bg-alert: var(--gd-sky-600);
+        --gd-color: var(--gd-sky-50);
+        --gd-color-notify-before: var(--gd-sky-400);
+    }
+    &.gooddialog-warning {
+        --gd-bg-alert: var(--gd-yellow-600);
+        --gd-color: var(--gd-yellow-50);
+        --gd-color-notify-before: var(--gd-yellow-400);
+    }
     /* Notifications */
 }
 
@@ -341,7 +429,6 @@ html.dark .gooddialog-notification.gd-theme-indigo.light {
     --gd-bg-alert: var(--gd-indigo-50);
     --gd-border: var(--gd-indigo-400);
     --gd-color: var(--gd-slate-700);
-    --gd-color-notify-before: var(--gd-indigo-400);
     --gd-text-color-btn: var(--gd-slate-100);
     --gd-bg-confirm-button: var(--gd-green-600);
     --gd-bg-cancel-button: var(--gd-orange-600);
@@ -351,9 +438,30 @@ html.dark .gooddialog-notification.gd-theme-indigo.light {
     --gd-color-svg-info: var(--gd-sky-400);
     --gd-color-svg-ok: var(--gd-green-500);
     --gd-color-svg-cancel: var(--gd-orange-600);
+    --gd-color-notify-before: var(--gd-indigo-400);
     .gooddialog-alert{
         box-shadow: var(--gd-indigo-800) 4px 4px 8px;
         --gd-shadow: var(--gd-indigo-800) 4px 4px 8px;
+    }
+    &.gooddialog-success {
+        --gd-bg-alert: var(--gd-green-500);
+        --gd-color: var(--gd-white);
+        --gd-color-notify-before: var(--gd-green-400);
+    }
+    &.gooddialog-error {
+        --gd-bg-alert: var(--gd-red-500);
+        --gd-color: var(--gd-white);
+        --gd-color-notify-before: var(--gd-red-400);
+    }
+    &.gooddialog-info {
+        --gd-bg-alert: var(--gd-sky-500);
+        --gd-color: var(--gd-white);
+        --gd-color-notify-before: var(--gd-sky-400);
+    }
+    &.gooddialog-warning {
+        --gd-bg-alert: var(--gd-yellow-400);
+        --gd-color: var(--gd-yellow-900);
+        --gd-color-notify-before: var(--gd-yellow-200);
     }
     /* Notifications */
 }
@@ -378,6 +486,26 @@ html.dark .gooddialog-notification.gd-theme-indigo ,
     --gd-color-svg-cancel: var(--gd-orange-600);
     .gooddialog-alert{
         box-shadow: var(--gd-indigo-900) 4px 4px 8px;
+    }
+    &.gooddialog-success {
+        --gd-bg-alert: var(--gd-green-600);
+        --gd-color: var(--gd-green-50);
+        --gd-color-notify-before: var(--gd-green-400);
+    }
+    &.gooddialog-error {
+        --gd-bg-alert: var(--gd-orange-600);
+        --gd-color: var(--gd-orange-50);
+        --gd-color-notify-before: var(--gd-orange-400);
+    }
+    &.gooddialog-info {
+        --gd-bg-alert: var(--gd-sky-600);
+        --gd-color: var(--gd-sky-50);
+        --gd-color-notify-before: var(--gd-sky-400);
+    }
+    &.gooddialog-warning {
+        --gd-bg-alert: var(--gd-yellow-600);
+        --gd-color: var(--gd-yellow-50);
+        --gd-color-notify-before: var(--gd-yellow-400);
     }
     /* Notifications */
 }

@@ -24,11 +24,16 @@ hero:
 ---
 
 <script setup lang="ts">
+  import {ref} from 'vue'
 import {goodDialogs, GoodDialogs} from './src/gooddialogs.service';
 import GToggleDarkMode from "./components/GToggleDarkMode.vue";
+import SelectType from "./components/SelectType.vue";
+
+const currentType = ref<string | undefined>(undefined)
+
 async function pruebaBorrar() {
   const goodDialogs = new GoodDialogs();
-  const resDialog = await goodDialogs.confirm("Delete?");
+  const resDialog = await goodDialogs.confirm("Delete?", );
   if (!resDialog) return goodDialogs.cancelled("cancelled");
   //const response = await apiService.delete('api/v1/document/' + 4)
 
@@ -40,6 +45,7 @@ async function pruebaBorrar() {
 }
 </script>
 <GToggleDarkMode></GToggleDarkMode>
+
 <button class="gd-v-button" @click="goodDialogs.confirm('Mensaje')">Launch Dialog</button>
 
 ``` ts

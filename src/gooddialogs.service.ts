@@ -1,6 +1,7 @@
 import { goodDialogIcons, infoIcon } from "./icons.service"
 export type OptionTheme = 'gd-theme-primary' | 'gd-theme-blue' | 'gd-theme-indigo'
 export interface Options {
+    type?: 'success' | 'info' | 'error' | 'warning' 
     position?: 'top' | 'left' | 'right' | 'center' | 'top-left' | 'top-center' | 'top-right'
     alertIn?: string
     alertOut?: string
@@ -36,6 +37,7 @@ export class GoodDialogs {
     constructor(options?: Options) {
 
         this.options = {
+            type: options?.type ?? undefined,
             alertIn: options?.alertIn ?? 'goodalert-animation-aparecer',
             alertOut: options?.alertOut ?? 'goodalert-animation-desaparecer',
             position: options?.position ?? 'center',
@@ -64,6 +66,7 @@ export class GoodDialogs {
     private createComponent = (options?: Options) => {
 
         const optionsAlert: Options = {
+            type: options?.type ?? undefined,
             alertIn: options?.alertIn ?? this.options.alertIn,
             alertOut: options?.alertOut ?? this.options.alertOut,
             position: options?.position ?? this.options.position,
@@ -123,6 +126,9 @@ export class GoodDialogs {
 
         alert.appendChild(footer)
 
+        if(optionsAlert.type){
+            container.classList.add('gooddialog-'+optionsAlert.type)
+        }
 
         document.documentElement.appendChild(container)
 
@@ -356,6 +362,7 @@ export class GoodDialogs {
 
     createNotification(message?: string, options?: Options) {
         const optionsNotification: Options = {
+            type: options?.type ?? this.options.type,
             position: options?.position ?? 'top-right',
             timer: options?.timer ?? this.options.timer,
             title: options?.title ?? this.options.title,
@@ -387,6 +394,10 @@ export class GoodDialogs {
         notification.classList.value = 'gooddialog-notification' + ' ' + optionsNotification.theme! + ' ' + 'goodalert-animation-aparecer' + ' ' + (optionsNotification.darkForce ? 'dark' : '')
 
         notification.textContent = message ?? ''
+
+        if(optionsNotification.type){
+            notification.classList.add('gooddialog-'+optionsNotification.type)
+        }
 
         const timeOutOption = optionsNotification.timer ?? 5000
         setTimeout(() => {

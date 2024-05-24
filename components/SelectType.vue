@@ -3,18 +3,18 @@ import { ref, watch, nextTick } from "vue";
 import { OptionTheme } from "../src/gooddialogs.service";
 
 interface Props {
-  modelValue: string;
+  modelValue?: string ;
 }
 
 const porps = defineProps<Props>();
 const emit = defineEmits(["update:modelValue"]);
 
-const themes = ref(["gd-theme-indigo", "gd-theme-primary", "gd-theme-blue"]);
-const currentTheme = ref<OptionTheme>("gd-theme-indigo");
+const types = ref(['success' , 'info' , 'error' , 'warning', undefined ]);
+const currentType = ref<string | undefined>(undefined);
 
 function changeValue() {
   nextTick(() => {
-    emit("update:modelValue", currentTheme.value);
+    emit("update:modelValue", currentType.value);
   });
 }
 </script>
@@ -24,10 +24,10 @@ function changeValue() {
     style="margin-top: 16px; margin-bottom: 16px"
     name=""
     id=""
-    v-model="currentTheme"
+    v-model="currentType"
     @change="changeValue"
   >
-    <option :value="option" v-for="(option, index) in themes">
+    <option :value="option" v-for="(option, index) in types">
       {{ option }}
     </option>
   </select>
