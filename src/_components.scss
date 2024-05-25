@@ -162,8 +162,11 @@
 .gooddialog-notification {
   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-
+  
   background-color: var(--gd-bg-alert);
+  display: flex;
+  align-items: center;
+  gap: 8px;
   color: var(--gd-color);
   position: relative;
   overflow: hidden;
@@ -176,6 +179,16 @@
   z-index: 500;
   transition: transform 0.8s ease, opacity 0.5s ease;
   box-shadow: rgba(0, 0, 0, 0.3) 4px 4px 4px;
+
+  button svg{
+    //cursor: pointer;
+    width: 24px;
+    height: 24px;
+    path {
+
+      fill: var(--gd-color);
+    }
+  }
 }
 
 .gooddialog-notification::before,

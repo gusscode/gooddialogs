@@ -368,6 +368,7 @@ export class GoodDialogs {
             title: options?.title ?? this.options.title,
             subtitle: options?.subtitle ?? this.options.subtitle,
             darkForce: options?.darkForce ?? this.options.darkForce,
+            lightForce: options?.lightForce ?? this.options.lightForce,
             containerClass: options?.containerClass ?? this.options.containerClass,
             theme: options?.theme ?? this.options.theme,
             alertClass: options?.alertClass ?? this.options.alertClass,
@@ -391,16 +392,26 @@ export class GoodDialogs {
 
         }
         const notification = document.createElement('div')
-        notification.classList.value = 'gooddialog-notification' + ' ' + optionsNotification.theme! + ' ' + 'goodalert-animation-aparecer' + ' ' + (optionsNotification.darkForce ? 'dark' : '')
+        notification.classList.value = 'gooddialog-notification' + ' ' + optionsNotification.theme! + ' ' + 'goodalert-animation-aparecer' + ' ' + (optionsNotification.darkForce ? 'dark' : '') + ' ' + (optionsNotification.lightForce ? 'light' : '')
 
         notification.textContent = message ?? ''
 
+        const iconClose = document.createElement('button')
+
+        iconClose.addEventListener('click', closeNotification)
+
+        iconClose.innerHTML = goodDialogIcons.cancelIcon
+        notification.appendChild(iconClose)
         if(optionsNotification.type){
             notification.classList.add('gooddialog-'+optionsNotification.type)
         }
 
         const timeOutOption = optionsNotification.timer ?? 5000
         setTimeout(() => {
+            closeNotification()
+        }, timeOutOption);
+
+        function closeNotification(){
             notification.style.transform = 'translateX(100px)';
             notification.style.opacity = '0';
             //notification.style.position= 'absolute'
@@ -411,10 +422,12 @@ export class GoodDialogs {
                 //console.log(notifications.length);
 
                 if (notifications.length < 1) {
-                    container.remove()
+                    if(container){
+                        container.remove()
+                    }
                 }
             })
-        }, timeOutOption);
+        }
         container.appendChild(notification)
     }
 }
