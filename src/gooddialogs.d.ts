@@ -9,6 +9,7 @@ declare module 'gooddialogs' {
          * @param message (string)
          */
         confirm: (message: string, options?: Options, onResponseCB?: (data: HTMLButtonElement) => void) => Promise<boolean>
+        form: <T>(message: string, data: ItemDataForm[], options?: Options) => Promise<T>
         withOptions: <T>(message: string, optionsButtons: ButtonOptions<T>[], options?: Options) => Promise<T>
         success: (message?: string, options?: Options) => void
         cancelled: (message?: string, options?: Options) => void
@@ -41,6 +42,43 @@ declare module 'gooddialogs' {
         footerClass?: string
         persistent?: boolean
         onConfirm?: () => void
+    }
+    export type HTMLInputTypeAttribute =
+        | "button"
+        | "checkbox"
+        | "color"
+        | "date"
+        | "datetime-local"
+        | "email"
+        | "file"
+        | "hidden"
+        | "image"
+        | "month"
+        | "number"
+        | "password"
+        | "radio"
+        | "range"
+        | "reset"
+        | "search"
+        | "submit"
+        | "tel"
+        | "text"
+        | "time"
+        | "url"
+        | "week";
+    export interface DataInputForm<T> {
+        items: {
+            type: HTMLInputTypeAttribute
+            label: string
+            name: string
+        }[]
+        value?: T
+    }
+
+    export interface ItemDataForm {
+        type: HTMLInputTypeAttribute
+        label: string
+        name: string
     }
 
     export interface ButtonOptions<T> {
