@@ -18,6 +18,7 @@ export default defineConfig({
           { text: 'Home', link: '/' },
           { text: 'Dialogs', link: '/dialogs/' },
           { text: 'Notifications', link: '/notifications/' },
+          { text: 'Form', link: '/form/' },
 
         ]
       }

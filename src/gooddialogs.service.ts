@@ -1,7 +1,10 @@
 import { goodDialogIcons, infoIcon } from "./icons.service"
 export type OptionTheme = 'gd-theme-primary' | 'gd-theme-blue' | 'gd-theme-indigo'
+
+
 export interface Options {
-    type?: 'success' | 'info' | 'error' | 'warning' 
+    instance?: boolean
+    type?: 'success' | 'info' | 'error' | 'warning'
     position?: 'top' | 'left' | 'right' | 'center' | 'top-left' | 'top-center' | 'top-right'
     alertIn?: string
     alertOut?: string
@@ -30,6 +33,43 @@ interface ButtonOptions<T> {
     onClick?: (value: any) => void
 }
 
+export type HTMLInputTypeAttribute =
+    | "button"
+    | "checkbox"
+    | "color"
+    | "date"
+    | "datetime-local"
+    | "email"
+    | "file"
+    | "hidden"
+    | "image"
+    | "month"
+    | "number"
+    | "password"
+    | "radio"
+    | "range"
+    | "reset"
+    | "search"
+    | "submit"
+    | "tel"
+    | "text"
+    | "time"
+    | "url"
+    | "week";
+export interface DataInputForm<T> {
+    items: {
+        type: HTMLInputTypeAttribute
+        label: string
+        name: string
+    }[]
+    value?: T
+}
+
+export interface ItemDataForm {
+    type: HTMLInputTypeAttribute
+        label: string
+        name: string
+}
 
 export class GoodDialogs {
 
@@ -37,6 +77,7 @@ export class GoodDialogs {
     constructor(options?: Options) {
 
         this.options = {
+            instance: options?.instance ?? true,
             type: options?.type ?? undefined,
             alertIn: options?.alertIn ?? 'goodalert-animation-aparecer',
             alertOut: options?.alertOut ?? 'goodalert-animation-desaparecer',
@@ -46,15 +87,11 @@ export class GoodDialogs {
             subtitle: options?.subtitle ?? null,
             darkForce: options?.darkForce ?? false,
             lightForce: options?.lightForce ?? false,
-            containerClass: (options?.containerClass ?? 'gooddialog-container'
-
-                /* 'w-dvw h-dvh bg-gray-900/25 flex items-center justify-center fixed top-0 left-0 z-50 ' */)
-            /* + 'dark:text-slate-200 text-slate-800' */
-            ,
+            containerClass: (options?.containerClass ?? 'gooddialog-container'),
             theme: options?.theme ?? 'gd-theme-indigo',
-            alertClass: options?.alertClass ?? 'gooddialog-alert'/*  'w-fit bg-slate-700 aparecer p-2 min-w-60 text-slate-200 border border-sky-500/50 rounded-md ' */,
-            confirmButttonClass: options?.confirmButttonClass ?? 'gooddialog-confirm-button gooddialog-button-event' /* 'bg-green-700 text-slate-200 px-2 py-1' */,
-            cancelButtonClass: options?.cancelButtonClass ?? 'gooddialog-cancel-button gooddialog-button-event'/* 'bg-orange-700 text-slate-200 px-2 py-1' */,
+            alertClass: options?.alertClass ?? 'gooddialog-alert',
+            confirmButttonClass: options?.confirmButttonClass ?? 'gooddialog-confirm-button gooddialog-button-event',
+            cancelButtonClass: options?.cancelButtonClass ?? 'gooddialog-cancel-button gooddialog-button-event',
             footerClass: options?.footerClass ?? 'gooddialog-footer',
             divIconClass: options?.divIconClass ?? 'gooddialog-alert-div-icon gooddialog-svg-container',
             confirmButtonText: options?.confirmButtonText ?? 'Confirm',
@@ -63,9 +100,10 @@ export class GoodDialogs {
         }
     }
 
-    private createComponent = (options?: Options) => {
+    createComponent = (options?: Options) => {
 
         const optionsAlert: Options = {
+            instance: options?.instance ?? this.options.instance,
             type: options?.type ?? undefined,
             alertIn: options?.alertIn ?? this.options.alertIn,
             alertOut: options?.alertOut ?? this.options.alertOut,
@@ -124,13 +162,16 @@ export class GoodDialogs {
         alert.classList.add(optionsAlert.alertIn!)
         footer.classList.value = optionsAlert.footerClass!
 
+        const contentDiv = document.createElement('div')
+
+        alert.appendChild(contentDiv)
         alert.appendChild(footer)
 
-        if(optionsAlert.type){
-            container.classList.add('gooddialog-'+optionsAlert.type)
+        if (optionsAlert.type) {
+            container.classList.add('gooddialog-' + optionsAlert.type)
         }
 
-        document.documentElement.appendChild(container)
+
 
         if (!optionsAlert.persistent) {
 
@@ -139,21 +180,21 @@ export class GoodDialogs {
 
                 if (eventElement.classList.contains('gooddialog-container')) {
                     const containerElements = document.getElementsByClassName('gooddialog-container')
-                   
+
                     container.classList.add('gooddialog-container-fade-out')
                     container.addEventListener('animationend', () => {
                         container.style.backgroundColor = 'rgba(0, 0, 0, 0.0)'
                     })
                     alert.classList.add(optionsAlert.alertOut!)
                     alert.addEventListener('animationend', () => {
-                        
-                        
+
+
                         container.remove()
                     })
                 }
             })
         }
-       
+
 
         const containerElements = document.getElementsByClassName('gooddialog-container')
         if (containerElements.length > 1) {
@@ -179,7 +220,7 @@ export class GoodDialogs {
                 })
             }
             alert.classList.add(optionsAlert.alertOut!)
-            
+
             alert.addEventListener('animationend', () => {
                 container.remove()
             })
@@ -227,9 +268,9 @@ export class GoodDialogs {
                 const nextButton = buttons[nextIndex] as HTMLButtonElement
                 nextButton.focus();
             }
-            
+
             if (e.key === 'Escape') {
-                
+
                 const containerElements = document.getElementsByClassName('gooddialog-container')
                 if (containerElements.length > 0) {
 
@@ -248,8 +289,12 @@ export class GoodDialogs {
             }
         })
 
+        if (optionsAlert.instance) {
+            document.documentElement.appendChild(container)
+        }
+
         return {
-            footer, container, alert, confirmButton, cancelButton, divIcon, titleMessage
+            footer, container, alert, confirmButton, cancelButton, divIcon, titleMessage, contentDiv
         }
     }
 
@@ -313,7 +358,7 @@ export class GoodDialogs {
                     alert.addEventListener('animationend', () => {
                         container.remove()
                     })
-                    
+
                     resolve(option.value)
                 })
                 footer.appendChild(buttonOpt)
@@ -362,6 +407,7 @@ export class GoodDialogs {
 
     createNotification(message?: string, options?: Options) {
         const optionsNotification: Options = {
+            instance: options?.instance ?? this.options.instance,
             type: options?.type ?? this.options.type,
             position: options?.position ?? 'top-right',
             timer: options?.timer ?? this.options.timer,
@@ -402,8 +448,8 @@ export class GoodDialogs {
 
         iconClose.innerHTML = goodDialogIcons.cancelIcon
         notification.appendChild(iconClose)
-        if(optionsNotification.type){
-            notification.classList.add('gooddialog-'+optionsNotification.type)
+        if (optionsNotification.type) {
+            notification.classList.add('gooddialog-' + optionsNotification.type)
         }
 
         const timeOutOption = optionsNotification.timer ?? 5000
@@ -411,7 +457,7 @@ export class GoodDialogs {
             closeNotification()
         }, timeOutOption);
 
-        function closeNotification(){
+        function closeNotification() {
             notification.style.transform = 'translateX(100px)';
             notification.style.opacity = '0';
             //notification.style.position= 'absolute'
@@ -422,7 +468,7 @@ export class GoodDialogs {
                 //console.log(notifications.length);
 
                 if (notifications.length < 1) {
-                    if(container){
+                    if (container) {
                         container.remove()
                     }
                 }
@@ -430,6 +476,122 @@ export class GoodDialogs {
         }
         container.appendChild(notification)
     }
+
+    form = async <T>(message: string, data:ItemDataForm[], options?: Options) => {
+        const optionsNotification: Options = {
+            instance: options?.instance ?? this.options.instance,
+            type: options?.type ?? this.options.type,
+            position: options?.position ?? 'top-right',
+            timer: options?.timer ?? this.options.timer,
+            title: options?.title ?? this.options.title,
+            subtitle: options?.subtitle ?? this.options.subtitle,
+            darkForce: options?.darkForce ?? this.options.darkForce,
+            lightForce: options?.lightForce ?? this.options.lightForce,
+            containerClass: options?.containerClass ?? this.options.containerClass,
+            theme: options?.theme ?? this.options.theme,
+            alertClass: options?.alertClass ?? this.options.alertClass,
+            footerClass: options?.footerClass ?? this.options.footerClass,
+            divIconClass: options?.divIconClass ?? this.options.divIconClass,
+            confirmButttonClass: options?.confirmButttonClass ?? this.options.confirmButttonClass,
+            cancelButtonClass: options?.cancelButtonClass ?? this.options.cancelButtonClass,
+            confirmButtonText: options?.confirmButtonText ?? this.options.confirmButtonText,
+            cancelButtonText: options?.cancelButtonText ?? this.options.cancelButtonText,
+            persistent: options?.persistent ?? this.options.persistent,
+            onConfirm: options?.onConfirm
+        }
+
+        const { alert, cancelButton, confirmButton, container, divIcon, footer, titleMessage, contentDiv } = this.createComponent(options)
+
+
+        data.forEach((item, index) => {
+            contentDiv.style.display = 'grid'
+            contentDiv.style.gridTemplateColumns = '1fr'
+            contentDiv.style.gap = '12px'
+            contentDiv.style.marginBottom = '12px'
+            const divContentItem = document.createElement('div')
+            divContentItem.classList.add('gooddialogs-input-form-item-box')
+            
+
+
+            const itemLabel = document.createElement('label')
+            itemLabel.textContent = item.label
+            itemLabel.setAttribute('for','gooddialogs-item-' + index + '-' + item.type )
+            const itemDoc = document.createElement('input')
+            itemDoc.type = item.type
+            itemDoc.name = item.name
+            itemDoc.classList.add('gooddialogs-input-form-instance')
+            itemDoc.id = 'gooddialogs-item-' + index + '-' + item.type
+
+            
+            divContentItem.appendChild(itemLabel)
+            divContentItem.appendChild(itemDoc)
+
+            contentDiv.appendChild(divContentItem)
+
+        })
+
+        confirmButton.focus()
+
+        confirmButton.tabIndex = 1
+        cancelButton.tabIndex = 2
+        titleMessage.textContent = message
+
+        return new Promise((resolve) => {
+            const result: { [key: string]: any } = {}
+
+
+
+            confirmButton.addEventListener('click', () => {
+                const inputsFormElements = document.querySelectorAll('.gooddialogs-input-form-instance')
+
+                inputsFormElements.forEach(item => {
+                    if (item instanceof HTMLInputElement) {
+                        const name = item.getAttribute('name');
+                        let value: any = item.value;
+                        if(item.type ==='checkbox'){
+                            value = item.checked
+                        }
+                        if (name) {
+                            result[name] = value;
+                        }
+                    }
+                });
+
+                resolve(result)
+            })
+
+            cancelButton.addEventListener('click', () => {
+                resolve(false)
+            })
+        })
+    }
+
+
+}
+
+class GooddialogElement extends HTMLElement {
+    constructor() {
+        super();
+        //this.attachShadow({ mode: 'open' });
+        //const {alert} = goodDialogs.createComponent({instance: false})
+        const alert = document.createElement('div')
+        alert.textContent = 'jajajjaj mi customElement'
+        //this.shadowRoot?.appendChild(alert)
+
+
+    }
+
+    connectedCallback() {
+        const { container, confirmButton } = goodDialogs.createComponent({ instance: false, persistent: true })
+        container.style.position = 'relative'
+        container.style.height = '100%'
+        container.style.width = 'fit-content'
+
+
+
+        this.appendChild(container)
+    }
+
 }
 
 export const goodDialogs = new GoodDialogs()

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, Ref } from "vue";
+import { ref, Ref, onMounted } from "vue";
 import {
   OptionTheme,
   GoodDialogs,
@@ -42,6 +42,16 @@ function changeRefText(element: Options["cancelButtonText"], content: string) {
 const changedarkMode = () => {
   document.documentElement.classList.toggle("dark");
 };
+//------------------------
+
+
+onMounted(async ()=>{
+  //goodDialogs.defineWebComponent('gd-dialog')
+  
+  
+
+})
+
 
 
 </script>
@@ -56,6 +66,10 @@ const changedarkMode = () => {
         Theme:
         <SelectTheme v-model="optionsGD.theme!"></SelectTheme>
       </div>
+      <!-- <div>
+        oooo
+        <gd-dialog></gd-dialog>
+      </div> -->
       <div>
         <button class="gd-v-button" @click="viewAlerts">Launch Dialog</button>
       </div>
@@ -112,6 +126,7 @@ const changedarkMode = () => {
         <GToggle v-model="optionsGD.persistent!">Persistent</GToggle>
       </section>
     </section>
+    
   </main>
 </template>
 

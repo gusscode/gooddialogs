@@ -526,6 +526,34 @@ html.dark .gooddialog-notification.gd-theme-indigo.light.gooddialog-warning {
   --gd-color: var(--gd-yellow-900);
   --gd-color-notify-before: var(--gd-yellow-200);
 }
+.gooddialog-container.gd-theme-indigo .gooddialogs-input-form-item-box,
+html.dark .gooddialog-container.gd-theme-indigo.light .gooddialogs-input-form-item-box,
+.gooddialog-notification.gd-theme-indigo .gooddialogs-input-form-item-box,
+html.dark .gooddialog-notification.gd-theme-indigo.light .gooddialogs-input-form-item-box {
+  display: grid;
+  gap: 2px;
+  /*  input[type="password"]{
+
+       border: solid 1px red;
+   } */
+}
+.gooddialog-container.gd-theme-indigo .gooddialogs-input-form-item-box input,
+html.dark .gooddialog-container.gd-theme-indigo.light .gooddialogs-input-form-item-box input,
+.gooddialog-notification.gd-theme-indigo .gooddialogs-input-form-item-box input,
+html.dark .gooddialog-notification.gd-theme-indigo.light .gooddialogs-input-form-item-box input {
+  border: solid 1px var(--gd-indigo-600);
+  padding: 2px;
+  padding-left: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+}
+.gooddialog-container.gd-theme-indigo .gooddialogs-input-form-item-box label,
+html.dark .gooddialog-container.gd-theme-indigo.light .gooddialogs-input-form-item-box label,
+.gooddialog-notification.gd-theme-indigo .gooddialogs-input-form-item-box label,
+html.dark .gooddialog-notification.gd-theme-indigo.light .gooddialogs-input-form-item-box label {
+  font-size: 16px;
+  font-weight: 600;
+}
 
 /* Theme Indigo Dark */
 html.dark .gooddialog-container.gd-theme-indigo,
@@ -584,6 +612,34 @@ html.dark .gooddialog-notification.gd-theme-indigo.gooddialog-warning,
   --gd-bg-alert: var(--gd-yellow-600);
   --gd-color: var(--gd-yellow-50);
   --gd-color-notify-before: var(--gd-yellow-400);
+}
+html.dark .gooddialog-container.gd-theme-indigo .gooddialogs-input-form-item-box,
+.gooddialog-container.gd-theme-indigo.dark .gooddialogs-input-form-item-box,
+html.dark .gooddialog-notification.gd-theme-indigo .gooddialogs-input-form-item-box,
+.gooddialog-notification.gd-theme-indigo.dark .gooddialogs-input-form-item-box {
+  display: grid;
+  gap: 2px;
+  /*  input[type="password"]{
+
+       border: solid 1px red;
+   } */
+}
+html.dark .gooddialog-container.gd-theme-indigo .gooddialogs-input-form-item-box input,
+.gooddialog-container.gd-theme-indigo.dark .gooddialogs-input-form-item-box input,
+html.dark .gooddialog-notification.gd-theme-indigo .gooddialogs-input-form-item-box input,
+.gooddialog-notification.gd-theme-indigo.dark .gooddialogs-input-form-item-box input {
+  border: solid 1px var(--gd-indigo-400);
+  padding: 2px;
+  padding-left: 8px;
+  font-size: 16px;
+  border-radius: 4px;
+}
+html.dark .gooddialog-container.gd-theme-indigo .gooddialogs-input-form-item-box label,
+.gooddialog-container.gd-theme-indigo.dark .gooddialogs-input-form-item-box label,
+html.dark .gooddialog-notification.gd-theme-indigo .gooddialogs-input-form-item-box label,
+.gooddialog-notification.gd-theme-indigo.dark .gooddialogs-input-form-item-box label {
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .gooddialog-container p,

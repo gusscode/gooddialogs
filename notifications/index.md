@@ -16,7 +16,7 @@ const currentType = ref(undefined)
 <SelectTheme v-model="currentTheme"></SelectTheme>
 <SelectType v-model="currentType"></SelectType>
 
-<button style="background-color: green;border-radius: 4px;color: white;font-size: 16px;padding: 4px 8px;" @click=" goodDialogs.createNotification('Notification', {timer:5000, theme: currentTheme, type: currentType})">Launch Notification</button>
+<button class="gd-v-button" @click=" goodDialogs.createNotification('Notification', {timer:5000, theme: currentTheme, type: currentType})">Launch Notification</button>
 
 ``` ts
  goodDialogs.createNotification('Notification', {type: /* option type, undefined default */})

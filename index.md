@@ -13,6 +13,9 @@ hero:
     - theme: alt
       text: Notifications
       link: /notifications/
+    - theme: alt
+      text: Forms
+      link: /form/
 
 #features:
 #  - title: Vue
