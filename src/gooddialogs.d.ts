@@ -22,6 +22,9 @@ declare module 'gooddialogs' {
 
     export type GoodDialogIcon = 'infoIcon' | 'okIcon' | 'cancelIcon'
     export interface Options {
+        messageAlign?: 'start' | 'end' | 'center' | 'justify'
+        messageMaxWidth?: string
+        instance?: boolean
         type?: 'success' | 'info' | 'error' | 'warning'
         position?: 'top' | 'left' | 'right' | 'center' | 'top-left' | 'top-center' | 'top-right'
         alertIn?: string

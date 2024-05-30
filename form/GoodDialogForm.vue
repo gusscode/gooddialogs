@@ -11,7 +11,7 @@ async function launchForm() {
   const result = await goodDialogs.form("Send your data", [
     { name: "name", label: "Name", type: "text" },
     { name: "lastName", label: "Last Name", type: "text" },
-  ]);
+  ], {messageMaxWidth: '200px', messageAlign: 'center'});
   if (!result) {
     return goodDialogs.cancelled();
   }

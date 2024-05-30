@@ -642,6 +642,10 @@ html.dark .gooddialog-notification.gd-theme-indigo .gooddialogs-input-form-item-
   font-weight: 600;
 }
 
+.gooddialog-html-element {
+  overflow: hidden;
+}
+
 .gooddialog-container p,
 .gooddialog-container h1,
 .gooddialog-container h2,
@@ -807,7 +811,7 @@ html.dark .gooddialog-notification.gd-theme-indigo .gooddialogs-input-form-item-
 }
 
 .gooddialog-title-message {
-  text-align: center;
+  width: 100%;
 }
 
 .gooddialog-notification {

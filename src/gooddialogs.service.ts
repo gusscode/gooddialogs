@@ -3,6 +3,8 @@ export type OptionTheme = 'gd-theme-primary' | 'gd-theme-blue' | 'gd-theme-indig
 
 
 export interface Options {
+    messageAlign?: 'start' | 'end' | 'center' | 'justify'
+    messageMaxWidth?: string
     instance?: boolean
     type?: 'success' | 'info' | 'error' | 'warning'
     position?: 'top' | 'left' | 'right' | 'center' | 'top-left' | 'top-center' | 'top-right'
@@ -77,6 +79,8 @@ export class GoodDialogs {
     constructor(options?: Options) {
 
         this.options = {
+            messageAlign: options?.messageAlign ?? 'center',
+            messageMaxWidth: options?.messageMaxWidth ?? '100%',
             instance: options?.instance ?? true,
             type: options?.type ?? undefined,
             alertIn: options?.alertIn ?? 'goodalert-animation-aparecer',
@@ -103,6 +107,8 @@ export class GoodDialogs {
     createComponent = (options?: Options) => {
 
         const optionsAlert: Options = {
+            messageMaxWidth: options?.messageMaxWidth ?? this.options.messageMaxWidth,
+            messageAlign: options?.messageAlign ?? this.options.messageAlign,
             instance: options?.instance ?? this.options.instance,
             type: options?.type ?? undefined,
             alertIn: options?.alertIn ?? this.options.alertIn,
@@ -136,6 +142,10 @@ export class GoodDialogs {
         divIcon.innerHTML = goodDialogIcons['infoIcon']
         divIcon.classList.value = optionsAlert.divIconClass!
         messageElement.appendChild(divIcon)
+        messageElement.style.maxWidth = optionsAlert.messageMaxWidth!
+        messageElement.style.display = 'flex'
+        messageElement.style.justifyContent = 'center'
+        messageElement.style.flexDirection = 'column'
 
         if (optionsAlert.title) {
             const title = document.createElement('h2')
@@ -151,6 +161,7 @@ export class GoodDialogs {
         }
         const titleMessage = document.createElement('p')
         titleMessage.classList.value = 'gooddialog-title-message'
+        titleMessage.style.textAlign = optionsAlert.messageAlign!
 
         //titleMessage.innerText = message
 
@@ -188,7 +199,7 @@ export class GoodDialogs {
                     alert.classList.add(optionsAlert.alertOut!)
                     alert.addEventListener('animationend', () => {
 
-
+                        document.body.classList.remove('gooddialog-html-element')
                         container.remove()
                     })
                 }
@@ -222,6 +233,7 @@ export class GoodDialogs {
             alert.classList.add(optionsAlert.alertOut!)
 
             alert.addEventListener('animationend', () => {
+                document.body.classList.remove('gooddialog-html-element')
                 container.remove()
             })
 
@@ -252,6 +264,7 @@ export class GoodDialogs {
             alert.classList.add(optionsAlert.alertOut!)
 
             alert.addEventListener('animationend', () => {
+                document.body.classList.remove('gooddialog-html-element')
                 container.remove()
             })
 
@@ -284,13 +297,15 @@ export class GoodDialogs {
                 alert.classList.add(optionsAlert.alertOut!)
 
                 alert.addEventListener('animationend', () => {
+                    document.body.classList.remove('gooddialog-html-element')
                     container.remove()
                 })
             }
         })
 
         if (optionsAlert.instance) {
-            document.documentElement.appendChild(container)
+            document.body.classList.add('gooddialog-html-element')
+            document.body.appendChild(container)
         }
 
         return {
@@ -356,6 +371,7 @@ export class GoodDialogs {
                     }
                     alert.classList.add(options?.alertOut!)
                     alert.addEventListener('animationend', () => {
+                        document.body.classList.remove('gooddialog-html-element')
                         container.remove()
                     })
 
@@ -434,7 +450,7 @@ export class GoodDialogs {
             container = document.createElement('div')
             container.id = 'gooddialog-notification-container-' + optionsNotification.position
             container.classList.value = 'gooddialog-notification-container-' + optionsNotification.position
-            document.documentElement.appendChild(container)
+            document.body.appendChild(container)
 
         }
         const notification = document.createElement('div')
@@ -479,6 +495,8 @@ export class GoodDialogs {
 
     form = async <T>(message: string, data:ItemDataForm[], options?: Options) => {
         const optionsNotification: Options = {
+            messageAlign: options?.messageAlign ?? this.options.messageAlign,
+            messageMaxWidth: options?.messageMaxWidth ?? this.options.messageMaxWidth,
             instance: options?.instance ?? this.options.instance,
             type: options?.type ?? this.options.type,
             position: options?.position ?? 'top-right',
