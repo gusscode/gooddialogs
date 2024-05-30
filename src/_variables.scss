@@ -290,6 +290,25 @@ html.dark .gooddialog-notification.gd-theme-primary.light {
     --gd-color: var(--gd-yellow-900);
     --gd-color-notify-before: var(--gd-yellow-200);
   }
+  .gooddialogs-input-form-item-box {
+    display: grid;
+    gap: 2px;
+    input {
+        border: solid 1px var(--gd-slate-500);
+        padding: 2px;
+        padding-left: 8px;
+        font-size: 16px;
+        border-radius: 4px;
+    }
+   /*  input[type="password"]{
+
+        border: solid 1px red;
+    } */
+    label {
+        font-size: 16px;
+        font-weight: 600;
+    }
+  }
 }
 
 /* Primary Dark */
@@ -329,6 +348,26 @@ html.dark .gooddialog-notification.gd-theme-primary,
     --gd-bg-alert: var(--gd-yellow-600);
     --gd-color: var(--gd-yellow-50);
     --gd-color-notify-before: var(--gd-yellow-400);
+  }
+  .gooddialogs-input-form-item-box {
+    display: grid;
+    gap: 2px;
+    input {
+        border: solid 1px var(--gd-slate-400);
+        background-color: var(--gd-bg-alert);
+        padding: 2px;
+        padding-left: 8px;
+        font-size: 16px;
+        border-radius: 4px;
+    }
+   /*  input[type="password"]{
+
+        border: solid 1px red;
+    } */
+    label {
+        font-size: 16px;
+        font-weight: 600;
+    }
   }
 }
 /* theme blue */
@@ -370,6 +409,25 @@ html.dark .gooddialog-notification.gd-theme-blue.light {
     --gd-color: var(--gd-yellow-900);
     --gd-color-notify-before: var(--gd-yellow-200);
   }
+  .gooddialogs-input-form-item-box {
+    display: grid;
+    gap: 2px;
+    input {
+        border: solid 1px var(--gd-indigo-400);
+        padding: 2px;
+        padding-left: 8px;
+        font-size: 16px;
+        border-radius: 4px;
+    }
+   /*  input[type="password"]{
+
+        border: solid 1px red;
+    } */
+    label {
+        font-size: 16px;
+        font-weight: 600;
+    }
+  }
 
   /* Notifications */
 }
@@ -410,6 +468,25 @@ html.dark .gooddialog-notification.gd-theme-blue,
     --gd-bg-alert: var(--gd-yellow-600);
     --gd-color: var(--gd-yellow-50);
     --gd-color-notify-before: var(--gd-yellow-400);
+  }
+  .gooddialogs-input-form-item-box {
+    display: grid;
+    gap: 2px;
+    input {
+        border: solid 1px var(--gd-indigo-400);
+        padding: 2px;
+        padding-left: 8px;
+        font-size: 16px;
+        border-radius: 4px;
+    }
+   /*  input[type="password"]{
+
+        border: solid 1px red;
+    } */
+    label {
+        font-size: 16px;
+        font-weight: 600;
+    }
   }
   /* Notifications */
 }
@@ -527,6 +604,7 @@ html.dark .gooddialog-notification.gd-theme-indigo,
     gap: 2px;
     input {
         border: solid 1px var(--gd-indigo-400);
+        color: var(--gd-color);
         padding: 2px;
         padding-left: 8px;
         font-size: 16px;
