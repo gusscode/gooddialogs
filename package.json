@@ -1,6 +1,6 @@
 {
   "name": "gooddialogs",
-  "version": "0.4.4",
+  "version": "1.0.0",
   "description": "good dialogs and notifications",
   "main": "dist/dist-node/index.js",
   "module": "dist/dist-node/index.js",
@@ -25,6 +25,7 @@
     "build": "npm run prepare-folder && npm run build-browser || npm run build-node || npm run sass:build && npm run copy",
     "publicar": "npm publish --access public",
     "copy": "cd src && copy base.min.css ..\\dist && copy base.min.css.map ..\\dist && copy gooddialogs.d.ts ..\\dist",
+    "sass": "sass src/base.scss src/base.css --watch",
     "sass:watch": "sass src/base.scss src/base.css --watch",
     "sass:build": "sass src/base.scss src/base.css && postcss src/base.css -o src/base.min.css"
   },

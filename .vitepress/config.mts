@@ -19,6 +19,7 @@ export default defineConfig({
           { text: 'Dialogs', link: '/dialogs/' },
           { text: 'Notifications', link: '/notifications/' },
           { text: 'Form', link: '/form/' },
+          { text: 'With Options', link: '/with-options/' },
 
         ]
       }

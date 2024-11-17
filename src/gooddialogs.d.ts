@@ -5,14 +5,15 @@
 declare module 'gooddialogs' {
     export class GoodDialogs {
         options: Options;
+        constructor(options?:Options)
         /**
          * @param message (string)
          */
         confirm: (message: string, options?: Options, onResponseCB?: (data: HTMLButtonElement) => void) => Promise<boolean>
         form: <T>(message: string, data: ItemDataForm[], options?: Options) => Promise<T>
         withOptions: <T>(message: string, optionsButtons: ButtonOptions<T>[], options?: Options) => Promise<T>
-        success: (message?: string, options?: Options) => void
-        cancelled: (message?: string, options?: Options) => void
+        success: (message?: string, options?: Options) => Promise<boolean>
+        cancelled: (message?: string, options?: Options) => Promise<boolean>
         createNotification: (message?: string, options?: Options) => void
     }
     export const goodDialogs: GoodDialogs;
